@@ -7,5 +7,5 @@ import { AppProvider } from "@hocs/index.ts";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <AppProvider>
     <App />
-  </AppProvider>
+  </AppProvider>,
 );

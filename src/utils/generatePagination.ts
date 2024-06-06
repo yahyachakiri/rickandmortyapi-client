@@ -2,7 +2,7 @@ export function generatePagination(
   currentPage: number,
   totalPages: number,
   maxPages: number = 5,
-  ellipsisThreshold: number = 3
+  ellipsisThreshold: number = 3,
 ): (number | string)[] {
   let pagination: (number | string)[] = [];
 

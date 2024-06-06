@@ -146,7 +146,7 @@ export default function Home() {
           <Pagination generatePagination={generatePagination} handlePage={handlePage} page={page} pages={data.info.pages} />
         </>
       )}
-      {error && <p className="text-center">{(error as IApiError).data.error}</p>}
+      {error && <p className="text-center">{(error as IApiError).data?.error}</p>}
     </PageLayout>
   );
 }
