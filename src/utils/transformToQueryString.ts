@@ -1,4 +1,4 @@
-type QueryObject = Record<string, string>;
+type QueryObject = Record<string, string | number>;
 
 export function transformToQueryString(data: QueryObject): string {
   let queryString = "";

@@ -10,10 +10,12 @@ export type getCharactersRes = {
   };
   results: ICharacter[];
 };
-export type getCharactersReq = {
-  page?: number;
-  name?: string;
-  status?: StatusEnum;
-  species?: SpeciesEnum;
-  gender?: GenderEnum;
-};
+export type getCharactersReq =
+  | {
+      page?: number;
+      name?: string;
+      status?: StatusEnum;
+      species?: SpeciesEnum;
+      gender?: GenderEnum;
+    }
+  | Record<string, string | number>;
