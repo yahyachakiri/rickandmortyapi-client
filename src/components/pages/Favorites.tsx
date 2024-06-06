@@ -1,11 +1,12 @@
-import { ICharacter } from "@/interfaces";
 import { FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite, removeFavorite } from "@/store/slices/favorite";
-import { RootState } from "@/store";
-import { checkFavorite } from "@/utils";
 import { Link } from "react-router-dom";
-import { PageLayout } from "../Layout/PageLayout";
+
+import { ICharacter } from "@interfaces/index";
+import { addFavorite, removeFavorite } from "@store/slices/favorite";
+import { RootState } from "@store/index";
+import { checkFavorite } from "@utils/index";
+import { PageLayout } from "@components/Layout/PageLayout";
 
 export default function Favorites() {
   const dispatch = useDispatch();

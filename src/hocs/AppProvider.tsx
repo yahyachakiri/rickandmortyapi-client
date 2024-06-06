@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { PersistGate } from "redux-persist/integration/react";
 
 import { persistor, store } from "@store/index";
-import { LoadingScreen } from "@/components/UI/Loading";
+import { LoadingScreen } from "@/components/UI";
 
 interface props {
   children: React.ReactNode;

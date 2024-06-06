@@ -1,13 +1,14 @@
-import { rickandmortyApi } from "@store/api";
-import { IApiError, ICharacter } from "@/interfaces";
 import { FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite, removeFavorite } from "@/store/slices/favorite";
-import { RootState } from "@/store";
-import { checkFavorite } from "@/utils";
 import { useParams } from "react-router-dom";
-import { LoadingScreen } from "../UI/Loading";
-import { PageLayout } from "../Layout/PageLayout";
+
+import { rickandmortyApi } from "@store/api";
+import { IApiError, ICharacter } from "@interfaces/index";
+import { RootState } from "@store/index";
+import { addFavorite, removeFavorite } from "@store/slices/favorite";
+import { checkFavorite } from "@utils/index";
+import { LoadingScreen } from "@components/UI/Loading";
+import { PageLayout } from "@components/Layout/PageLayout";
 
 export default function Character() {
   const { id } = useParams();

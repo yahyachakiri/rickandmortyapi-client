@@ -1,18 +1,15 @@
 import { useLayoutEffect, useState } from "react";
-import { rickandmortyApi } from "@store/api";
-import { GenderEnum, SpeciesEnum, StatusEnum } from "@/enums";
-import { generatePagination } from "@/utils/generatePagination";
-import { IApiError, ICharacter } from "@/interfaces";
 import { useDispatch, useSelector } from "react-redux";
-import { addFavorite, removeFavorite } from "@/store/slices/favorite";
-import { RootState } from "@/store";
-import { checkFavorite } from "@/utils";
 import { useLocation } from "react-router-dom";
-import { LoadingCharacters } from "../UI/Loading";
-import { Character } from "../UI/Character";
-import { Pagination } from "../UI/Pagination";
-import { Filter } from "../UI/Filter";
-import { PageLayout } from "../Layout/PageLayout";
+
+import { GenderEnum, SpeciesEnum, StatusEnum } from "@enums/index";
+import { rickandmortyApi } from "@store/api";
+import { IApiError, ICharacter } from "@interfaces/index";
+import { addFavorite, removeFavorite } from "@store/slices/favorite";
+import { RootState } from "@store/index";
+import { checkFavorite, generatePagination } from "@utils/index";
+import { LoadingCharacters, Character, Pagination, Filter } from "@components/UI";
+import { PageLayout } from "@components/Layout/PageLayout";
 
 export default function Home() {
   const [gender, setGender] = useState<GenderEnum | undefined>(undefined);
@@ -44,9 +41,7 @@ export default function Home() {
     setSpecies((speciesParam as SpeciesEnum) || undefined);
     setGender((genderParam as GenderEnum) || undefined);
     setPage(Number(pageParam) || 1);
-
   }, [location.search]);
-
 
   const updateUrl = ({
     name,
